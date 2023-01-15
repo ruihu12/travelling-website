@@ -1,0 +1,42 @@
+<% layout('layouts/Boilerplate')%>
+<div class="row">
+    <h1 class="text-center">Edit tours</h1>
+    <form action="/tours/<%=tour._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+        <div class="mb-3">
+            <label class="form-label" for="title">Title </label>
+            <input class="form-control" type="text" id="title" name="tour[title]" value="<%=tour.title%>" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+           
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="location">location</label>
+            <input class="form-control" type="text" id="location" name="tour[location]" value="<%=tour.location%>" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="image">Image Url</label>
+            <input class="form-control" type="text" id="image" name="tour[image]" value="<%=tour.image%>" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="description">Description</label>
+            <textarea class="form-control" type="text" id="description"
+                name="tour[description]" requried><%= tour.description%></textarea>
+            <div class="valid-feedback">
+                    Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-info">Update Tour</button>
+        </div>
+    </form>
+    <a href="/tours/<%= tour._id%>">Back To Tour</a>
+
+</div>
+</div>
